@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="memory.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .game-board {
+            display: grid;
+            grid-template-columns: repeat(4, 100px);
+            grid-gap: 10px;
+            justify-content: center;
+            margin: 20px auto;
+        }
+        .card {
+            width: 100px;
+            height: 100px;
+            background-color: #0951bd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            cursor: pointer;
+            color: transparent;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        .card.flipped {
+            color: #fff;
+            background-color: #4caf50;
+        }
+        .info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 10px;
+        }
+        .win-message {
+            display: none;
+            font-size: 24px;
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Memory Game</h1>
+        <div class="info">
+            <span>Moves: <span id="movesCount">0</span></span>
+            <span>Time: <span id="timer">0s</span></span>
+        </div>
+        <button id="restart">Restart</button>
+        <p class="win-message" id="winMessage">You Win!</p>
+    </header>
+    <div class="game-board" id="gameBoard"></div>
+</body>
+</html>
